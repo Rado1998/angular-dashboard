@@ -1,0 +1,38 @@
+<div class="theme-light">
+    <div class="top_widget_container">
+        <div class="widget_toolbar">
+            <img cursor-pointer src="assets/widgets/toolbar/full_screen.svg" />
+            <img cursor-pointer src="assets/widgets/toolbar/drag_drop.svg" />
+        </div>
+        <div class="market_widget_title">
+            <p class="widget_label" no-margin>{{widgetLabel}}</p>
+        </div>
+        <div class="top_list_container">
+            <ngx-datatable class="material" [columnMode]="'force'" [headerHeight]="38" [footerHeight]="0" [rows]="rows" [rowHeight]="48" [columns]="columns">
+            </ngx-datatable>
+            <ng-template #indexCell>
+                <div class="top_list_index"><span>1</span></div>
+            </ng-template>
+            <ng-template #nameCell>
+                <div class="top_list_logo">
+                    <div class="top_list_logo_container"><img src="assets/widgets/table/zencash-1.svg"></div>
+                    <div><span>BTH</span></div>
+                </div>
+            </ng-template>
+            <ng-template #percent1>
+                <div class="top_list_percent"><span>$0.7878989</span></div>
+
+            </ng-template>
+            <ng-template #percent2>
+                <div class="top_list_status">
+                    <div><span>0.87%</span></div>
+                    <img src="assets/widgets/table/red_arrow_down.svg">
+                </div>
+            </ng-template>
+        </div>
+        <div class="top_list_view_all">
+            <button>View all</button>
+        </div>
+        <img class="top_list_footer" src="{{_themeService.smallLogoUrl}}">
+    </div>
+</div>

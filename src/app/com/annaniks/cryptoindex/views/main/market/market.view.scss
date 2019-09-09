@@ -1,0 +1,11 @@
+@import "src/app/com/annaniks/cryptoindex/styles/theme.scss";
+.main_content_wrapper {
+    min-height: calc(100vh - 55.14px);
+    @include themify($themes) {
+        background: themed('backgroundColor');
+        transition: background-color 0.5s;
+    }
+    .main_content {
+        margin: 0 4.16% 0 2.65%;
+    }
+}

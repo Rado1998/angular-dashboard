@@ -1,0 +1,171 @@
+// Side Navigation menu which is always visible
+// 
+@import 'src/app/com/annaniks/cryptoindex/styles/theme.scss';
+.side_navigation_menu {
+    width: 121.6px;
+    background: rgba(65, 75, 255, 0.1);
+    @include themify($themes) {
+        background: themed('sideMenuColor');
+        transition: background 0.5s;
+        -webkit-transition: background 0.5s;
+        -moz-transition: background 0.5s;
+        -ms-transition: background 0.5s;
+        -o-transition: background 0.5s;
+    }
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    .side_navigation_menu_header {
+        display: flex;
+        height: 108.46px;
+        img {
+            margin: auto;
+            cursor: pointer;
+        }
+    }
+    .side_navigation_menu_content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .side_navigation_menu_item {
+            &:hover {
+                cursor: pointer;
+                background: rgba(65, 75, 255, 0.4);
+            }
+            &:hover>.side_navigation_menu_item_overlay {
+                display: flex;
+            }
+            width: 100%;
+            height: 108.46px;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            .side_navigation_menu_item_overlay {
+                &:last-child {
+                    bottom: 0;
+                }
+                display: none;
+                position: absolute;
+                align-items: center;
+                flex-direction: column;
+                z-index: 11111111111;
+                left: 111.6px;
+                top: 0;
+                width: 508px;
+                height: 384px;
+                @include themify($themes) {
+                    background: themed('sideMenuOverlay');
+                    transition: background 0.5s;
+                    -webkit-transition: background 0.5s;
+                    -moz-transition: background 0.5s;
+                    -ms-transition: background 0.5s;
+                    -o-transition: background 0.5s;
+                }
+                box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+                border-radius: 4px;
+                .side_navigation_menu_item_overlay_content {
+                    width: 420px;
+                    height: 327px;
+                    margin: auto;
+                    display: flex;
+                    flex-direction: column;
+                    .side_navigation_menu_item_overlay_overviews {
+                        width: 100%;
+                        height: 65%;
+                        display: flex;
+                        .side_navigation_menu_item_overlay_overviews_title {
+                            margin-right: 35px;
+                            span {
+                                font-family: NanumGothic Bold;
+                                line-height: 21px;
+                                font-size: 12px;
+                                text-transform: capitalize;
+                                color: #FFFFFF;
+                                mix-blend-mode: normal;
+                            }
+                        }
+                        .side_navigation_menu_item_overlay_overviews_content {
+                            display: flex;
+                            flex-direction: column;
+                            .side_navigation_menu_item_overlay_overviews_item {
+                                &:hover>div:first-child {
+                                    span {
+                                        color: rgba(255, 255, 255, 0.5);
+                                    }
+                                }
+                                display: flex;
+                                flex-direction: column;
+                                div:first-child {
+                                    span {
+                                        font-family: NanumGothic Bold;
+                                        line-height: 21px;
+                                        font-size: 12px;
+                                        text-transform: capitalize;
+                                        color: #FFFFFF;
+                                        mix-blend-mode: normal;
+                                    }
+                                }
+                                div:nth-child(2) {
+                                    font-family: NanumGothic Regular;
+                                    line-height: 19px;
+                                    font-size: 11px;
+                                    text-transform: capitalize;
+                                    color: #FFFFFF;
+                                    mix-blend-mode: normal;
+                                    opacity: 0.5;
+                                }
+                            }
+                        }
+                    }
+                    .side_navigation_menu_item_overlay_category {
+                        width: 100%;
+                        height: 35%;
+                        display: flex;
+                        .side_navigation_menu_item_overlay_category_title {
+                            margin-right: 35px;
+                            span {
+                                font-family: NanumGothic Bold;
+                                line-height: 21px;
+                                font-size: 12px;
+                                text-transform: capitalize;
+                                color: #FFFFFF;
+                                mix-blend-mode: normal;
+                            }
+                        }
+                        .side_navigation_menu_item_overlay_category_content {
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            .side_navigation_menu_item_image {
+                margin: 0 0 6.4px 23px
+            }
+            .side_navigation_menu_item_label {
+                margin-left: 23px;
+                display: flex;
+                align-items: center;
+                div:first-child {
+                    margin-right: 9.72px;
+                    span {
+                        font-family: NanumGothic Bold;
+                        line-height: normal;
+                        font-size: 13px;
+                        color: #FFFFFF;
+                        mix-blend-mode: normal;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .side_navigation_menu {
+        display: none;
+    }
+}

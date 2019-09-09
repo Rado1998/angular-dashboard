@@ -1,0 +1,46 @@
+<div class="theme-light">
+    <div class="side_navigation_menu">
+        <div class="side_navigation_menu_header ">
+            <img src="assets/Side-navigation-menu/cix_horizontal_white.svg ">
+        </div>
+        <div class="side_navigation_menu_content ">
+            <div class="side_navigation_menu_item " *ngFor="let menuItem of menuItemsService.getSideMenuItems() ">
+                <div class="side_navigation_menu_item_overlay ">
+                    <div class="side_navigation_menu_item_overlay_content ">
+                        <div class="side_navigation_menu_item_overlay_overviews ">
+                            <div class="side_navigation_menu_item_overlay_overviews_title ">
+                                <span>OVERVIEWS</span>
+                            </div>
+                            <div class="side_navigation_menu_item_overlay_overviews_content ">
+                                <div class="side_navigation_menu_item_overlay_overviews_item " *ngFor="let overview of _overviews ">
+                                    <div><span>{{overview.title}}</span></div>
+                                    <div>{{overview.subtitle}}<span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="side_navigation_menu_item_overlay_category ">
+                            <div class="side_navigation_menu_item_overlay_category_title ">
+                                <span>OVERVIEWS</span>
+                            </div>
+                            <div class="side_navigation_menu_item_overlay_category_content ">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="side_navigation_menu_item_image ">
+                    <img [src]="menuItem.image ">
+                </div>
+                <div class="side_navigation_menu_item_label ">
+                    <div>
+                        <span>{{menuItem.label}}</span>
+                    </div>
+
+                    <div>
+                        <img src="assets/Side-navigation-menu/arrow_bottom.svg ">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

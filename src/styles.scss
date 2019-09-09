@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/material.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';
+@import 'src/app/com/annaniks/cryptoindex/styles/theme.scss';
+@import 'src/app/com/annaniks/cryptoindex/styles/variables.scss';
+@font-face {
+    font-family: NanumGothic Bold;
+    src: url(assets/fonts/NanumGothic-Bold.ttf);
+}
+
+@font-face {
+    font-family: NanumGothic ExtraBold;
+    src: url(assets/fonts/NanumGothic-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: NanumGothic Regular;
+    src: url(assets/fonts/NanumGothic-Regular.ttf);
+}
+
+.transition-all {
+    transition: all 0.5s;
+}
+
+* {
+    outline: none;
+}
+
+.chart-demo {
+    height: 250px;
+}
+
+.ngx-datatable.material:not(.cell-selection) .datatable-body-row:hover,
+.ngx-datatable.material:not(.cell-selection) .datatable-body-row:hover .datatable-row-group {
+    background-color: transparent !important;
+    cursor: pointer;
+}
+
+.highcharts-background {
+    fill: #15155C;
+}
+
+.highcharts-credits {
+    display: none;
+}
+
+.highcharts-grid {
+    display: none;
+}
+
+// DATATABLE
+.ngx-datatable {
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+datatable-body-row {
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+}
+
+.datatable-header-cell-label {
+    font-family: NanumGothic Bold;
+    line-height: normal;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #414BFF;
+    white-space: nowrap;
+}

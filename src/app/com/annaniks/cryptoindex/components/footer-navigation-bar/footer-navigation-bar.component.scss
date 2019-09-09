@@ -1,0 +1,163 @@
+@import 'src/app/com/annaniks/cryptoindex/styles/theme.scss';
+.footer_navigation_bar {
+    min-height: 313.41px;
+    height: auto;
+    display: flex;
+    background-image: url(/assets/footer-navigation-menu/whiteBackground.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    .footer_navigation_bar_container {
+        width: 100%;
+        margin: auto;
+        margin: auto 4.16% auto 2.65%;
+        .footer_logo_content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            .footer_logo_subtitle {
+                margin-left: 50px;
+                span {
+                    font-family: NanumGothic Regular;
+                    line-height: 14px;
+                    font-size: 10px;
+                    letter-spacing: 0.01em;
+                    @include themify($themes) {
+                        color: themed('textColor');
+                        transition: color 0.5s;
+                        -webkit-transition: color 0.5s;
+                        -moz-transition: color 0.5s;
+                        -ms-transition: color 0.5s;
+                        -o-transition: color 0.5s;
+                    }
+                }
+            }
+        }
+        .useful_links {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            .useful_links_title {
+                span {
+                    font-family: NanumGothic Bold;
+                    line-height: 17px;
+                    font-size: 12px;
+                    letter-spacing: 0.01em;
+                    @include themify($themes) {
+                        color: themed('textColor');
+                        transition: color 0.5s;
+                        -webkit-transition: color 0.5s;
+                        -moz-transition: color 0.5s;
+                        -ms-transition: color 0.5s;
+                        -o-transition: color 0.5s;
+                    }
+                }
+            }
+            .useful_links_links {
+                span {
+                    font-family: NanumGothic Regular;
+                    line-height: 14px;
+                    font-size: 10px;
+                    letter-spacing: 0.01em;
+                    @include themify($themes) {
+                        color: themed('textColor');
+                        transition: color 0.5s;
+                        -webkit-transition: color 0.5s;
+                        -moz-transition: color 0.5s;
+                        -ms-transition: color 0.5s;
+                        -o-transition: color 0.5s;
+                    }
+                }
+            }
+        }
+        .social_buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            .social_buttons_title {
+                span {
+                    font-family: NanumGothic Bold;
+                    line-height: 17px;
+                    font-size: 12px;
+                    letter-spacing: 0.01em;
+                    @include themify($themes) {
+                        color: themed('textColor');
+                        transition: color 0.5s;
+                        -webkit-transition: color 0.5s;
+                        -moz-transition: color 0.5s;
+                        -ms-transition: color 0.5s;
+                        -o-transition: color 0.5s;
+                    }
+                }
+            }
+            .social_buttons_icons {
+                display: flex;
+                justify-content: space-between;
+                width: 128px;
+                margin-top: 20px;
+                .icon_item {
+                    width: 22.56px;
+                    height: 23px;
+                    background: #414BFF;
+                    border-radius: 4px;
+                    display: flex;
+                    img {
+                        margin: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .footer_navigation_bar_container.row {
+        flex-direction: column-reverse;
+    }
+    .footer_logo {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 50px;
+        margin-bottom: 35px;
+    }
+    .useful_links {
+        margin-top: 30px;
+        .useful_links_title {
+            span {
+                line-height: 19px !important;
+                font-size: 16px !important;
+            }
+        }
+        .useful_links_links {
+            max-width: 60%;
+            span {
+                line-height: 21px !important;
+                font-size: 14px !important;
+            }
+        }
+    }
+    .footer_navigation_bar_container {
+        margin: 30px 4.16% auto 2.65% !important;
+        position: relative;
+    }
+    .footer_navigation_bar {
+        margin-left: 0;
+    }
+    .social_buttons_icons {
+        width: 220px !important;
+        .icon_item {
+            width: 38.43px !important;
+            height: 39.17px !important;
+            img {
+                width: 21.36px;
+                height: 18.86px;
+            }
+        }
+    }
+    .social_buttons_title {
+        span {
+            line-height: 19px !important;
+            font-size: 16px !important;
+        }
+    }
+}

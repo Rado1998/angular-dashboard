@@ -1,0 +1,226 @@
+@import 'src/app/com/annaniks/cryptoindex/styles/theme.scss';
+:host ::ng-deep datatable-header {
+    display: none !important;
+}
+
+.top_widget_container {
+    height: 367px;
+    background: #15114A;
+    border-radius: 6px;
+    position: relative;
+    margin-top: 22px; // max-height: 364px;
+    @include themify($themes) {
+        background-color: themed('widgetBackground');
+        transition: background-color 0.5s;
+    }
+    .widget_toolbar {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 10px;
+        top: 13px;
+        img:not(first-child) {
+            margin-left: 10px;
+        }
+    }
+    .market_widget_title {
+        padding-top: 24px;
+        padding-left: 21px;
+        .widget_label {
+            font-family: NanumGothic Bold;
+            line-height: 24px;
+            font-size: 24px;
+            text-transform: uppercase;
+            @include themify($themes) {
+                color: themed('textColor');
+                transition: color 0.5s;
+                -webkit-transition: color 0.5s;
+                -moz-transition: color 0.5s;
+                -ms-transition: color 0.5s;
+                -o-transition: color 0.5s;
+            }
+        }
+    }
+    .top_list_container {
+        width: 100%;
+        margin-top: 30px;
+        max-height: 230px;
+        overflow-y: auto;
+        &::-webkit-scrollbar-track {
+            background-color: rgba(255, 86, 78, 0.3);
+        }
+        &::-webkit-scrollbar {
+            width: 3px;
+            height: 5px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: #FF564E !important;
+            border-radius: 60px !important;
+            -webkit-border-radius: 60px !important;
+            -moz-border-radius: 60px !important;
+            -ms-border-radius: 60px !important;
+            -o-border-radius: 60px !important;
+        }
+        .top_list_index {
+            min-width: 8;
+            span {
+                font-family: NanumGothic Regular;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 14px;
+                font-size: 12px;
+                letter-spacing: 0.01em;
+                @include themify($themes) {
+                    color: themed('textColor');
+                    transition: color 0.5s;
+                    -webkit-transition: color 0.5s;
+                    -moz-transition: color 0.5s;
+                    -ms-transition: color 0.5s;
+                    -o-transition: color 0.5s;
+                }
+            }
+        }
+        .top_list_item_dash {
+            border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+            width: 92%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            min-height: 50px;
+        }
+        .top_list_logo {
+            min-width: 20%;
+            display: flex;
+            align-items: center;
+            .top_list_logo_container {
+                margin-right: 7.7px;
+                width: 13px;
+                height: 13px;
+                background: #F2F2F2;
+                border-radius: 50%;
+                display: flex;
+                img {
+                    margin: auto;
+                }
+            }
+            div:nth-child(2) {
+                span {
+                    font-family: NanumGothic Extrabold;
+                    font-style: normal;
+                    font-weight: 800;
+                    line-height: normal;
+                    font-size: 13px;
+                    text-align: center;
+                    @include themify($themes) {
+                        color: themed('textColor');
+                        transition: color 0.5s;
+                        -webkit-transition: color 0.5s;
+                        -moz-transition: color 0.5s;
+                        -ms-transition: color 0.5s;
+                        -o-transition: color 0.5s;
+                    }
+                }
+            }
+        }
+        .top_list_percent {
+            min-width: 30%;
+            span {
+                font-family: NanumGothic Regular;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 14px;
+                font-size: 12px;
+                color: rgba(255, 86, 78, 0.7);
+            }
+        }
+        .top_list_status {
+            min-width: 22%;
+            display: flex;
+            align-items: baseline;
+            div {
+                margin-right: 3px;
+                span {
+                    font-family: NanumGothic ExtraBold;
+                    font-style: normal;
+                    font-weight: 800;
+                    line-height: normal;
+                    font-size: 12px;
+                    text-transform: capitalize;
+                    color: #FF564E;
+                }
+            }
+        }
+    }
+    .top_list_view_all {
+        padding-left: 21px;
+        padding-top: 10px;
+        button {
+            background: #414BFF;
+            border: 1px solid #414BFF;
+            box-sizing: border-box;
+            border-radius: 2px;
+            width: 67.59px;
+            height: 21.41px;
+            font-family: NanumGothic ExtraBold;
+            font-style: normal;
+            font-weight: 800;
+            line-height: normal;
+            font-size: 10px;
+            letter-spacing: 0.06em;
+            color: #FFFFFF;
+            mix-blend-mode: normal;
+        }
+    }
+    .top_list_footer {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .market_widget_title {
+        padding-top: 12px !important;
+        padding-left: 12px !important;
+        .widget_label {
+            font-size: 11px !important;
+            @include themify($themes) {
+                color: themed('predSmallWidgetLabel') !important;
+                transition: color 0.5s;
+                -webkit-transition: color 0.5s;
+                -moz-transition: color 0.5s;
+                -ms-transition: color 0.5s;
+                -o-transition: color 0.5s;
+            }
+        }
+    }
+    .top_list_container {
+        margin-top: 10px !important;
+        max-height: 300px !important;
+        &::-webkit-scrollbar {
+            width: 6px !important;
+        }
+    }
+    .top_list_view_all {
+        display: none !important;
+    }
+    .top_list_footer {
+        display: none !important;
+    }
+    .top_widget_container {
+        @include themify($themes) {
+            box-shadow: themed('predSmallBoxShadow') !important;
+            transition: box-shadow 0.5s;
+            -webkit-transition: box-shadow 0.5s;
+            -moz-transition: box-shadow 0.5s;
+            -ms-transition: box-shadow 0.5s;
+            -o-transition: box-shadow 0.5s;
+            background: themed('predSmallbackground') !important;
+            transition: background 0.5s;
+            -webkit-transition: background 0.5s;
+            -moz-transition: background 0.5s;
+            -ms-transition: background 0.5s;
+            -o-transition: background 0.5s;
+        }
+    }
+}

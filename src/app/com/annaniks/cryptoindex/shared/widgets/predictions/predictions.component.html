@@ -1,0 +1,49 @@
+<div class="theme-light">
+    <div class="prediction_widget_container">
+        <div class="widget_toolbar">
+            <img cursor-pointer src="assets/widgets/toolbar/full_screen.svg" />
+            <img cursor-pointer src="assets/widgets/toolbar/drag_drop.svg" />
+        </div>
+        <div class="prediction_widget_content">
+            <div class="market_widget_title">
+                <p class="widget_label" no-margin>PREDICTIONS</p>
+            </div>
+            <div class="predictions_title"><span>C1</span><span>Predicted rank (next 30 days) </span></div>
+            <div class="predictions_title"><span>C2</span><span>Price action. Will the price be more next month?</span></div>
+            <div class="predictions_widget_list">
+                <ngx-datatable class="material" [columnMode]="'force'" [headerHeight]="31" [footerHeight]="0" [scrollbarV]="true" [rows]="rows" [rowHeight]="44" [columns]="columns">
+                </ngx-datatable>
+                <ng-template #indexCell>
+                    <div class="predictions_list_id"><span>1</span></div>
+                </ng-template>
+                <ng-template #nameCell>
+                    <div class="predictions_list_name">
+                        <img src="assets/widgets/Predictions/Bitcoin.svg" />
+                        <span class="predictions_list_name_title">Bitcoin</span>
+                        <span>BTH</span>
+                    </div>
+                </ng-template>
+                <ng-template #c1Cell>
+                    <div class="predictions_list_C1">
+                        <img src="assets/widgets/table/red_arrow_down.svg">
+                    </div>
+                </ng-template>
+                <ng-template #c2Cell>
+                    <div class="predictions_list_C2 "><span>YES</span></div>
+                </ng-template>
+
+                <div class="predictions_filter_container">
+                    <div class="predictions_list_filter">
+                        <div class="predictions_list_filter_item"><span>24 Hours</span></div>
+                        <div class="predictions_list_filter_item"> <span>7 Day</span> </div>
+                        <div class="predictions_list_filter_item active"> <span>30 days</span> </div>
+                    </div>
+                </div>
+                <div class="view_all">
+                    <button>View all</button>
+                </div>
+            </div>
+        </div>
+        <img class="top_list_footer" src="{{_themeService.smallLogoUrl}}">
+    </div>
+</div>

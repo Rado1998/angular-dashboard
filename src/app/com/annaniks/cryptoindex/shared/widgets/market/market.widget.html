@@ -1,0 +1,170 @@
+<div class="theme-light">
+    <div #marketWidgetContainer class="market_widget_container" position-relative [ngSwitch]="widgetMode" [style.height]="(widgetMode == 'table') ? '480px' : ((widgetMode == 'treeMap' || widgetMode == 'index-sm') ? _heightOfSmallWidget :_heightOfOtherWidgets)">
+        <div class="widget_toolbar">
+            <img cursor-pointer src="assets/widgets/toolbar/full_screen.svg" />
+            <img cursor-pointer src="assets/widgets/toolbar/drag_drop.svg" />
+        </div>
+        <div class="market_widget_title" *ngIf="widgetMode != 'index'">
+            <p class="widget_label" no-margin>{{widgetLabel}}</p>
+        </div>
+        <div class="t_header" *ngSwitchCase="'table'">
+            <ngx-datatable class="material" [columnMode]="'force'" [scrollbarV]="true" [scrollbarH]="true" [headerHeight]="38" [footerHeight]="0" [rows]="rows" [rowHeight]="48" [columns]="columns">
+            </ngx-datatable>
+            <ng-template #indexCell>
+                <div class="t_body_first_item">
+                    <span>1</span>
+                </div>
+            </ng-template>
+            <ng-template #bitcoinCell>
+                <div class="t_body_item_bitcoin" display-flex>
+                    <div class="t_body_item_bitcoin_image"><img src="assets/widgets/table/zencash-1.svg"></div>
+                    <div class="t_body_item_bitcoin_title"><span>Bitcoin</span></div>
+                    <div class="t_body_item_bitcoin_subtitle"><span>BTH</span></div>
+                </div>
+            </ng-template>
+            <ng-template #priceCell>
+                <div class="t_body_item_price">
+                    <span>$0.787898990'</span>
+                </div>
+            </ng-template>
+            <ng-template #priceCell>
+                <div class="t_body_item_price">
+                    <span>$0.787898990'</span>
+                </div>
+            </ng-template>
+            <ng-template #supplyCell>
+                <div class="t_body_item_price">
+                    <span>110.32 Bn</span>
+                </div>
+            </ng-template>
+            <ng-template #volumeCell>
+                <div class="t_body_item_volume" display-flex>
+                    <div><span>0.87%</span></div>
+                    <div><img src="assets/widgets/table/green_arrow_up.svg"></div>
+                </div>
+            </ng-template>
+            <ng-template #chartCell>
+                <div class="widget_chart">
+                    <div>
+                        <img src="assets/widgets/table/chart.svg">
+                    </div>
+                </div>
+            </ng-template>
+
+        </div>
+        <div *ngSwitchCase="'index'">
+            <div class="row">
+                <div class="col-md-2 col-sm-12">
+                    <div class="index_widget_title">
+                        <span>INDEX CIX100</span>
+                    </div>
+                    <div class="index_widget_status" position-relative>
+                        <div><span>780.666</span></div>
+                        <div class="index_widget_overlay">
+                            <span>0.87%</span>
+                            <img src="assets/widgets/table/red_arrow_down.svg">
+                        </div>
+                    </div>
+                    <div class="index_widget_subtitle"><span>Avg 13, 26:44 PM MSK</span></div>
+                </div>
+                <div class="col-lg-2 col-md-12 small_version_index_chart">
+                    <div class="small_version_index_chart_container">
+                        <div class="small_version_index_chart_left">
+                            <div><span>78.667</span></div>
+                            <div><span>Avg 13, 26:44 PM MSK</span></div>
+                        </div>
+                        <div class="small_version_index_chart_right">
+                            <div class="small_version_index_chart_right_top">
+                                <span>0.87%</span>
+                                <img src="assets/widgets/index/green_arrow_up18.svg">
+                            </div>
+                            <div class="small_version_index_chart_right_bottom">
+                                <span>0.87%</span>
+                                <img src="assets/widgets/index/red_arrow_down7.svg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-md-12" position-relative>
+                    <div class="chart_filter">
+                        <div (click)="_setChartMode('day',$event)" cursor-pointer class="chart_filter_item"><span>DAY</span></div>
+                        <div (click)="_setChartMode('week',$event)" cursor-pointer class="chart_filter_item"><span>WEEK</span></div>
+                        <div (click)="_setChartMode('month',$event)" cursor-pointer class="chart_filter_item active "><span>MONTH</span></div>
+                        <div (click)="_setChartMode('year',$event)" cursor-pointer class="chart_filter_item "><span>YEAR</span></div>
+                        <div (click)="_setChartMode('all',$event)" cursor-pointer class="chart_filter_item"><span>ALL</span></div>
+                    </div>
+                    <div id="canvas" (chartInit)="onChartInit($event)" echarts [options]="options" class="chart-demo" [loading]="isLoading" theme="macarons"></div>
+                </div>
+            </div>
+        </div>
+        <div *ngSwitchCase="'index-sm'" class="chart_in_small_widget">
+            <div class="chart_in_small_widget_title_container">
+                <div class="chart_in_small_widget_title_content">
+                    <div class="chart_in_small_widget_title"><span>780.666</span></div>
+                    <div class="chart_in_small_widget_subtitle"><span>Avg 13, 26:44 PM MSK</span></div>
+                </div>
+
+
+                <div class="chart_in_small_widget_title_overlay">
+                    <div class="chart_in_small_widget_title_overlay_title">
+                        <div>
+                            <span>0.87%</span>
+                        </div>
+                        <img src="assets/widgets/index/red_arrow_down.svg">
+                    </div>
+                    <div class="chart_in_small_widget_title_overlay_subtitle">
+                        <div>
+                            <span>0.87%</span>
+                        </div>
+                        <img src="assets/widgets/index/green_arrow_up.svg">
+                    </div>
+                </div>
+            </div>
+            <div id="canvas" (chartInit)="onChartInit($event)" echarts [options]="options" class="small-chart-demo" [loading]="isLoading" theme="macarons">
+
+            </div>
+        </div>
+        <div *ngSwitchCase="'treeMap'" class="treeMap">
+            <div class="treeMap_container">
+                <div class="treeMap_pagination">
+                    <div class="pagination_title">
+                        <div><span>Period 11: August 01 2018 - August 28 2018</span></div>
+                        <div><span>Start: 345,570,203 ; Now: 273,069,660</span></div>
+                    </div>
+                    <div class="treeMap_pagination_content">
+                        <div class="treeMap_pagination_item">
+                            <div class="treeMap_pagination_item_icon" cursor-pointer>
+                                <img src="assets/widgets/treeMap/arrow-left.svg">
+                            </div>
+                            <div><span>Previous period</span></div>
+                        </div>
+                        <div class="treeMap_pagination_item">
+                            <div>
+                                <span>Next period</span>
+                            </div>
+                            <div class="treeMap_pagination_item_icon" cursor-pointer>
+                                <img src="assets/widgets/treeMap/arrow-right.svg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="treeMap_content">
+                    <div #canvas_treemap class="canvas_treemap"></div>
+                    <!-- <div id="canvas" echarts [options]="treeMapOptions" class="chart-demo" [loading]="isLoading" theme="red"></div> -->
+                </div>
+            </div>
+
+        </div>
+
+        <div *ngIf="widgetMode != 'index'" class="widget_mode" display-flex>
+            <div (click)="setWidgetMode('treeMap')" [ngClass]="{'selected':widgetMode=='treeMap'}" cursor-pointer><span>Treemap</span></div>
+            <div><img src="assets/widgets/table/line.svg"></div>
+            <div (click)="setWidgetMode('index-sm')" [ngClass]="{'selected':widgetMode=='index' || widgetMode=='index-sm'}" cursor-pointer><span>Index</span></div>
+            <div><img src="assets/widgets/table/line.svg"></div>
+            <div (click)="setWidgetMode('table')" [ngClass]="{'selected':widgetMode=='table'}" cursor-pointer><span>Table</span></div>
+        </div>
+        <div *ngIf="widgetMode != 'index'" class="cryptoIndex_logo">
+            <img src="{{_themeService.smallLogoUrl}}">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="theme-light">
+    <div left-padding-control class="footer_navigation_bar">
+        <div class="footer_navigation_bar_container row">
+            <div class="col-lg-3 col-md-12 footer_logo">
+                <div class="footer_logo_content ">
+                    <img src="{{_themeService.footerLogoUrl}}">
+                    <div class="footer_logo_subtitle"><span>© 2018 Criptoindex</span></div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 useful_links">
+                <div class="useful_links_title"><span>Useful Links</span></div>
+                <div class="useful_links_links"><span>link link link link link link link link link link link link link
+                        link link link </span></div>
+            </div>
+            <div class="col-md-3 col-sm-12 offset-2 social_buttons">
+                <div class="social_buttons_title">
+                    <span>Social network</span>
+                </div>
+                <div class="social_buttons_icons">
+                    <div class="icon_item" *ngFor="let icon of socialIcons">
+                        <img [src]="icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<div class="theme-light">
+    <div class="top_bar_navigation_container">
+        <div class="top_bar_navigation top_bar_navigation_default">
+            <div class="top_bar_navigation_content">
+                <div class="top_bar_navigation_content_left">
+                    <div class="top_bar_navigation_content_mode"><span>Mode</span></div>
+                    <div class="top_bar_navigation_small_icon" [ngClass]="{'selected': (_currentTheme == 'theme-light')}" (click)="onClickChangeTheme('theme-light')">
+                        <img src="assets/Top-navigation-bar/half_moon.svg">
+                    </div>
+                    <div class="top_bar_navigation_small_icon" [ngClass]="{'selected': (_currentTheme == 'theme-dark')}" (click)="onClickChangeTheme('theme-dark')">
+                        <img src="assets/Top-navigation-bar/sun.svg">
+                    </div>
+                    <div class="top_bar_navigation_small_icon" [ngClass]="{'selected': (_currentTheme == 'theme-dull')}" (click)="onClickChangeTheme('theme-dull')">
+                        <img src="assets/Top-navigation-bar/cryto_icon.svg">
+                    </div>
+                    <div></div>
+                </div>
+                <div class="top_bar_navigation_content_right">
+                    <button class="top_bar_navigation_content_right_sign">
+                        Sign in
+                    </button>
+                    <button class="top_bar_navigation_content_right_sign">
+                        Sign up
+                    </button>
+                    <div display-flex align-items-baseline *ngIf="isAuthorized">
+                        <div class="top_bar_navigation_content_right_info"><span>$78790900</span></div>
+                        <div class="top_bar_navigation_content_right_info"><span>CIX100</span></div>
+                        <div class="top_bar_navigation_user_info">
+                            <div class="top_bar_navigation_user_name">
+                                <span>Zueva E</span>
+                            </div>
+                            <div class="top_bar_navigation_user_photo">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top_bar_navigation_mobile">
+            <div class="top_bar_navigation_mobile_left">
+                <div (click)="navigationDrawer()" class="mobile_mode_icon"><img src="assets/Top-navigation-bar/Menu.svg"></div>
+                <div class="mobile_mode_title"><span>Dashboard</span></div>
+            </div>
+            <div class="top_bar_navigation_mobile_right">
+                <div class="mobile_mode_add_widget">
+                    <img (click)="_openAddWidgetOverlay()" src="assets/Top-navigation-bar/plus.svg">
+                    <div (clickOutside)="onClickedOutsideWidget($event)" class="add_widget_overlay">
+                        <div><span>Add widget</span> </div>
+                    </div>
+                </div>
+                <div class="mobile_mode_avatar" (click)="_openAvatarWidgetOverlay()">
+                    <div (clickOutside)="onClickedOutsideAvatar($event)" class="avatar_overlay">
+                        <div> <span>Dashbord</span> </div>
+                        <div> <span>favorites</span> </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="overlay" *ngIf="showOverlay"></div>
+    <div class="navigation" [ngClass]="{'navigation_open' : !navigation,'navigation_close': navigation}">
+
+        <div class="close-nav" (click)="navigationDrawer()">
+            <img src="assets/Top-navigation-bar/shape.svg">
+        </div>
+        <div class="drawer_container">
+            <div class="drawer_item" *ngFor="let title of ['Market','Analysis','Redictions']">
+                <div class="drawer_item_icon"><img src="assets/Top-navigation-bar/market.svg"></div>
+                <div class="drawer_item_label">
+                    <span>{{title}}</span>
+                    <span *ngFor="let label of ['Market Overview','Global Market Chart','Recently Added','Top Gainers','Top Losers']">{{label}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

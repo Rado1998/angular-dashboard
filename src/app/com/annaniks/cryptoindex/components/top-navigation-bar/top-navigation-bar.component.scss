@@ -1,0 +1,368 @@
+@import "src/app/com/annaniks/cryptoindex/styles/theme.scss";
+.top_bar_navigation_container {
+    width: calc(100% - 121.6px);
+    top: 0;
+    right: 0;
+    height: 55.15px;
+    position: absolute;
+    @include themify($themes) {
+        background-color: themed('backgroundColor');
+        transition: background-color 0.5s;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    .top_bar_navigation {
+        width: 93.25%;
+        height: 40px;
+        margin: 0 4.16% 0 2.65%;
+        border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+        .top_bar_navigation_content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .top_bar_navigation_content_left {
+                display: flex;
+                align-items: center;
+                .top_bar_navigation_content_mode {
+                    display: flex;
+                    margin-right: 5px;
+                    span {
+                        font-family: NanumGothic Bold;
+                        line-height: normal;
+                        font-size: 10px;
+                        text-transform: capitalize;
+                        @include themify($themes) {
+                            color: themed("textColor");
+                            transition: background-color 0.5s;
+                        }
+                        mix-blend-mode: normal;
+                        margin: auto;
+                    }
+                }
+                .top_bar_navigation_small_icon {
+                    &.selected {
+                        border: 0.5px solid #414BFF;
+                        background: transparent !important;
+                    }
+                    &:hover {
+                        cursor: pointer;
+                        background: #1A175E;
+                        border: 0.5px solid #414BFF;
+                    }
+                    display: flex;
+                    margin-right: 4px;
+                    width: 16px;
+                    height: 15px;
+                    @include themify($themes) {
+                        background: themed("switchColor");
+                        transition: background-color 0.5s;
+                    }
+                    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.04);
+                    border-radius: 2px;
+                    img {
+                        margin: auto;
+                    }
+                }
+            }
+            .top_bar_navigation_content_right {
+                display: flex;
+                align-items: baseline;
+                .top_bar_navigation_content_right_sign {
+                    &:hover {
+                        background: #414BFF !important;
+                        transition: background-color 0.5s;
+                        box-shadow: 0px 2px 30px rgba(65, 75, 255, 0.4);
+                        cursor: pointer;
+                        -webkit-transition: background-color 0.5s;
+                        -moz-transition: background-color 0.5s;
+                        -ms-transition: background-color 0.5s;
+                        -o-transition: background-color 0.5s;
+                    }
+                    @include themify($themes) {
+                        background: themed("signInColor");
+                        transition: background-color 0.5s;
+                    }
+                    border-radius: 4px;
+                    border: none;
+                    width: 130px;
+                    height: 30px;
+                    font-family: NanumGothic ExtraBold;
+                    line-height: normal;
+                    font-size: 12px;
+                    color: #FFFFFF;
+                    mix-blend-mode: normal;
+                }
+                .top_bar_navigation_content_right_sign:first-child {
+                    margin-right: 13px;
+                }
+                .top_bar_navigation_content_right_info {
+                    display: flex;
+                    margin-right: 10px;
+                    span {
+                        margin: auto;
+                        font-family: Yu Gothic Bold;
+                        line-height: 17px;
+                        font-size: 12px;
+                        color: #FFFFFF;
+                        mix-blend-mode: normal;
+                    }
+                }
+                .top_bar_navigation_content_right_info:nth-child(2) {
+                    span {
+                        color: #414BFF;
+                    }
+                }
+                .top_bar_navigation_user_info {
+                    display: flex;
+                    align-items: center;
+                    .top_bar_navigation_user_name {
+                        display: flex;
+                        margin-right: 11.13px;
+                        span {
+                            margin: auto;
+                            font-family: Yu Gothic UI;
+                            line-height: 25px;
+                            font-size: 18px;
+                            color: #FFFFFF;
+                            mix-blend-mode: normal;
+                        }
+                    }
+                    .top_bar_navigation_user_photo {
+                        height: 23px;
+                        width: 23px;
+                        background: #FFFFFF;
+                        border-radius: 40px;
+                    }
+                }
+            }
+        }
+    }
+    .top_bar_navigation_mobile {
+        display: none;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 55px;
+        padding: 0 15px;
+        .top_bar_navigation_mobile_left {
+            display: flex;
+            align-items: center;
+            .mobile_mode_icon {
+                margin-right: 14px;
+            }
+        }
+        .top_bar_navigation_mobile_right {
+            display: flex;
+            .mobile_mode_add_widget {
+                margin-right: 9px;
+                position: relative;
+                .add_widget_overlay {
+                    display: none;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    z-index: 10;
+                    height: 36.48px;
+                    width: 146px;
+                    right: 0;
+                    bottom: -36.48px;
+                    background: #232487;
+                    border-radius: 2px;
+                    div {
+                        span {
+                            font-family: NanumGothic Bold;
+                            font-style: normal;
+                            font-weight: bold;
+                            line-height: 16px;
+                            font-size: 14px;
+                            color: #FFFFFF;
+                            border-radius: 2px;
+                            text-align: left;
+                        }
+                    }
+                }
+                .add_widget_overlay.show {
+                    display: flex;
+                }
+            }
+            .mobile_mode_avatar {
+                height: 25px;
+                width: 25px;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                background: url("/assets/Top-navigation-bar/user.png");
+                background-position: center;
+                background-size: contain;
+                position: relative;
+                .avatar_overlay {
+                    display: none;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    z-index: 10;
+                    height: 77.48px;
+                    width: 146px;
+                    right: 0;
+                    bottom: -77.48px;
+                    background: #232487;
+                    border-radius: 2px;
+                    div {
+                        span {
+                            font-family: NanumGothic Bold;
+                            font-style: normal;
+                            font-weight: bold;
+                            line-height: 16px;
+                            font-size: 14px;
+                            color: #FFFFFF;
+                            border-radius: 2px;
+                            text-align: right;
+                        }
+                    }
+                }
+                .avatar_overlay.show {
+                    display: flex;
+                }
+            }
+        }
+        .mobile_mode_title {
+            span {
+                font-family: NanumGothic Bold;
+                font-style: normal;
+                font-weight: bold;
+                line-height: 16px;
+                font-size: 18px;
+                color: #FFFFFF;
+            }
+        }
+    }
+}
+
+// Drawer Menu
+.heading {
+    margin-top: 200px;
+}
+
+.navigation {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: auto;
+    @include themify($themes) {
+        background: themed('mobileHeaderColor');
+        transition: background 0.5s;
+        -webkit-transition: background 0.5s;
+        -moz-transition: background 0.5s;
+        -ms-transition: background 0.5s;
+        -o-transition: background 0.5s;
+    }
+    z-index: 3;
+}
+
+.navigation_open {
+    left: -100%;
+    transition: all 0.5s !important;
+    -webkit-transition: all 0.5s !important;
+    -moz-transition: all 0.5s !important;
+    -ms-transition: all 0.5s !important;
+    -o-transition: all 0.5s !important;
+}
+
+.navigation_close {
+    left: 0;
+    transition: all 0.5s !important;
+    -webkit-transition: all 0.5s !important;
+    -moz-transition: all 0.5s !important;
+    -ms-transition: all 0.5s !important;
+    -o-transition: all 0.5s !important;
+}
+
+.close-nav {
+    float: right;
+    font-size: 2em;
+    margin: 3% 16px 0 3%;
+    color: #fff;
+    cursor: pointer;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.drawer_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 42px;
+    .drawer_item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 27px;
+        .drawer_item_label {
+            display: flex;
+            flex-direction: column;
+            margin-left: 27px;
+            span {
+                font-family: NanumGothic Regular;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 21px;
+                font-size: 14px;
+                text-transform: capitalize;
+                color: #FFFFFF;
+                mix-blend-mode: normal;
+                margin-bottom: 10px;
+                &:first-child {
+                    font-family: NanumGothic ExtraBold;
+                    font-style: normal;
+                    font-weight: 800;
+                    line-height: normal;
+                    font-size: 30px;
+                    color: #FFFFFF;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .top_bar_navigation_container {
+        width: 100%;
+        background: #272892 !important;
+    }
+    .top_bar_navigation_mobile {
+        @include themify($themes) {
+            background: themed('mobileHeaderColor');
+            transition: background 0.5s;
+            -webkit-transition: background 0.5s;
+            -moz-transition: background 0.5s;
+            -ms-transition: background 0.5s;
+            -o-transition: background 0.5s;
+        }
+    }
+    .top_bar_navigation_default {
+        display: none;
+    }
+    .top_bar_navigation_mobile {
+        display: flex !important;
+    }
+}

@@ -1,0 +1,30 @@
+<div class="theme-light">
+    <div class="main_content_wrapper">
+        <div class="main_content">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <market-widget [index]="0" [widgetMode]="'index'" [widgetLabel]="'INDEX CIX100'"></market-widget>
+                </div>
+
+                <div class="col-lg-6 col-md-12">
+                    <market-widget [index]="1" [widgetMode]="'index-sm'" [widgetLabel]="'INDEX CBI100'"></market-widget>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <market-widget [index]="2" [widgetMode]="'treeMap'"></market-widget>
+                </div>
+                <div class="col-lg-8 col-md-12">
+                    <market-widget [index]="3"></market-widget>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <predictions-widget></predictions-widget>
+                </div>
+                <div style="min-width: 245px;" class="col-lg-3 col-md-12">
+                    <top-widget [widgetLabel]="'TOP LOSERS'"></top-widget>
+                </div>
+                <div style="min-width: 245px;" class="col-lg-3 col-md-12">
+                    <top-widget></top-widget>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1062 @@
+    @import 'src/app/com/annaniks/cryptoindex/styles/theme.scss';
+     :host ::ng-deep datatable-header {
+        @include themify($themes) {
+            background: themed('tableHeaderColor') !important;
+            transition: background 0.5s;
+            -webkit-transition: background 0.5s;
+            -moz-transition: background 0.5s;
+            -ms-transition: background 0.5s;
+            -o-transition: background 0.5s;
+        }
+    }
+    
+     :host ::ng-deep datatable-header-cell {
+        padding: 0.5rem 1.2rem !important;
+    }
+    
+     :host ::ng-deep datatable-body {
+        height: 288px !important;
+        &::-webkit-scrollbar-track {
+            @include themify($themes) {
+                background-color: themed('scrollBarBackground');
+                transition: background-color 0.5s;
+                -webkit-transition: background-color 0.5s;
+                -moz-transition: background-color 0.5s;
+                -ms-transition: background-color 0.5s;
+                -o-transition: background-color 0.5s;
+            }
+        }
+        &::-webkit-scrollbar {
+            width: 3px;
+            height: 5px;
+            background-color: #F5F5F5;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: #FF564E;
+        }
+    }
+    
+     :host ::ng-deep .tooltip_container {
+        display: flex;
+        flex-direction: column;
+        padding: 6px;
+        @include themify($themes) {
+            background: themed('tooltipBackground');
+            transition: background 0.5s;
+            -webkit-transition: background 0.5s;
+            -moz-transition: background 0.5s;
+            -ms-transition: background 0.5s;
+            -o-transition: background 0.5s;
+        }
+        border-radius: 3px;
+        .tooltip_title {
+            span {
+                font-family: NanumGothic Regular;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 20px;
+                font-size: 10px;
+                text-align: center;
+                color: #FFFFFF;
+            }
+        }
+        div:last-child {
+            span {
+                &:first-child {
+                    font-family: NanumGothic Bold;
+                    font-style: normal;
+                    font-weight: bold;
+                    line-height: 20px;
+                    font-size: 12px;
+                    text-align: center;
+                    color: #FFFFFF;
+                }
+                &:last-child {
+                    font-family: NanumGothic Bold;
+                    font-style: normal;
+                    font-weight: bold;
+                    line-height: 14px;
+                    font-size: 12px;
+                    letter-spacing: 0.06em;
+                    color: #414BFF;
+                }
+            }
+        }
+    }
+    
+    .market_widget_container {
+        // min-height: 480px;
+        border-radius: 6px;
+        margin-top: 22px;
+        @include themify($themes) {
+            background-color: themed('widgetBackground');
+            transition: background-color 0.5s;
+            -webkit-transition: background-color 0.5s;
+            -moz-transition: background-color 0.5s;
+            -ms-transition: background-color 0.5s;
+            -o-transition: background-color 0.5s;
+        }
+        .widget_toolbar {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            right: 10px;
+            top: 13px;
+            img:not(first-child) {
+                margin-left: 10px;
+            }
+        }
+        .cryptoIndex_logo {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+        }
+        .market_widget_title {
+            padding-top: 24px;
+            padding-left: 16px;
+            .widget_label {
+                font-family: NanumGothic Bold;
+                line-height: 24px;
+                font-size: 24px;
+                text-transform: uppercase;
+                @include themify($themes) {
+                    color: themed('textColor');
+                    transition: color 0.5s;
+                    -webkit-transition: color 0.5s;
+                    -moz-transition: color 0.5s;
+                    -ms-transition: color 0.5s;
+                    -o-transition: color 0.5s;
+                }
+            }
+        }
+        .t_header {
+            margin-top: 23px;
+            .t_body_first_item {
+                span {
+                    font-family: NanumGothic Bold;
+                    line-height: 18px;
+                    font-size: 13px;
+                    letter-spacing: 0.01em;
+                    @include themify($themes) {
+                        color: themed('textColor');
+                        transition: color 0.5s;
+                        -webkit-transition: color 0.5s;
+                        -moz-transition: color 0.5s;
+                        -ms-transition: color 0.5s;
+                        -o-transition: color 0.5s;
+                    }
+                }
+            }
+            .t_body_item_bitcoin {
+                align-items: center;
+                min-width: fit-content;
+                .t_body_item_bitcoin_image {
+                    margin-right: 7px;
+                    width: 14.02px;
+                    height: 14px;
+                    background: #F2F2F2;
+                    border-radius: 50%;
+                    display: flex;
+                    img {
+                        margin: auto;
+                    }
+                }
+                .t_body_item_bitcoin_title {
+                    span {
+                        font-family: NanumGothic ExtraBold;
+                        font-style: normal;
+                        font-weight: bold;
+                        line-height: normal;
+                        font-size: 13px;
+                        text-align: center;
+                        @include themify($themes) {
+                            color: themed('textColor');
+                            transition: color 0.5s;
+                            -webkit-transition: color 0.5s;
+                            -moz-transition: color 0.5s;
+                            -ms-transition: color 0.5s;
+                            -o-transition: color 0.5s;
+                        }
+                    }
+                }
+                .t_body_item_bitcoin_subtitle {
+                    margin-left: 7.7px;
+                    span {
+                        font-family: NanumGothic bold;
+                        font-style: normal;
+                        font-weight: bold;
+                        line-height: normal;
+                        font-size: 13px;
+                        text-align: center;
+                        @include themify($themes) {
+                            color: themed('textColorAlpha05');
+                            transition: color 0.5s;
+                            -webkit-transition: color 0.5s;
+                            -moz-transition: color 0.5s;
+                            -ms-transition: color 0.5s;
+                            -o-transition: color 0.5s;
+                        }
+                    }
+                }
+            }
+            .t_body_item_price {
+                min-width: fit-content;
+                span {
+                    font-family: NanumGothic Bold;
+                    line-height: 17px;
+                    font-size: 12px;
+                    letter-spacing: 0.01em;
+                    @include themify($themes) {
+                        color: themed('textColorAlpha05');
+                        transition: color 0.5s;
+                        -webkit-transition: color 0.5s;
+                        -moz-transition: color 0.5s;
+                        -ms-transition: color 0.5s;
+                        -o-transition: color 0.5s;
+                    }
+                }
+            }
+            .t_body_item_volume {
+                align-items: center;
+                div:first-child {
+                    span {
+                        font-family: NanumGothic ExtraBold;
+                        line-height: normal;
+                        font-size: 12px;
+                        text-transform: capitalize;
+                        color: #0CAE63;
+                    }
+                    margin-right:8.8px;
+                }
+            }
+        }
+        // .t_header {
+        //     margin-top: 23px;
+        //     overflow-x: auto;
+        //     .t_header_high_part {
+        //         @include themify($themes) {
+        //             background: themed('tableHeaderColor');
+        //             transition: background 0.5s;
+        //             -webkit-transition: background 0.5s;
+        //             -moz-transition: background 0.5s;
+        //             -ms-transition: background 0.5s;
+        //             -o-transition: background 0.5s;
+        //         }
+        //         margin-bottom: 10px;
+        //         min-width: 555px;
+        //         .t_header_container {
+        //             width: 93.1%;
+        //             height: 38px;
+        //             margin: 0 auto;
+        //             align-items: center;
+        //             justify-content: flex-start;
+        //             .t_header_item {
+        //                 margin: auto;
+        //                 margin: 0px 10px;
+        //                 min-width: fit-content;
+        //                 span {
+        //                     font-family: NanumGothic Bold;
+        //                     line-height: normal;
+        //                     font-size: 10px;
+        //                     letter-spacing: 1px;
+        //                     text-transform: uppercase;
+        //                     color: #414BFF;
+        //                     white-space: nowrap;
+        //                 }
+        //             }
+        //             .t_header_first_item {
+        //                 margin: 0;
+        //                 width: 5%;
+        //                 margin: 0px 10px;
+        //             }
+        //         }
+        //     }
+        //     .t_body_container {
+        //         width: 93.1%;
+        //         margin: 0 auto;
+        //         max-height: 288px;
+        //         min-width: fit-content;
+        //         overflow: auto;
+        //         .t_body_row {
+        //             width: 100%;
+        //             min-width: fit-content;
+        //             display: flex;
+        //             height: 48px;
+        //             align-items: center;
+        //             justify-content: flex-start;
+        //             border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+        //             .t_body_first_item {
+        //                 span {
+        //                     font-family: NanumGothic Bold;
+        //                     line-height: 18px;
+        //                     font-size: 13px;
+        //                     letter-spacing: 0.01em;
+        //                     @include themify($themes) {
+        //                         color: themed('textColor');
+        //                         transition: color 0.5s;
+        //                         -webkit-transition: color 0.5s;
+        //                         -moz-transition: color 0.5s;
+        //                         -ms-transition: color 0.5s;
+        //                         -o-transition: color 0.5s;
+        //                     }
+        //                     padding-left: 6px;
+        //                 }
+        //             }
+        //             .t_body_item {
+        //                 margin: auto;
+        //                 min-width: fit-content;
+        //                 .t_body_item_bitcoin {
+        //                     align-items: center;
+        //                     min-width: fit-content;
+        //                     margin: 0px 10px;
+        //                     .t_body_item_bitcoin_image {
+        //                         margin-right: 7px;
+        //                         width: 14.02px;
+        //                         height: 14px;
+        //                         background: #F2F2F2;
+        //                         border-radius: 50%;
+        //                         display: flex;
+        //                         img {
+        //                             margin: auto;
+        //                         }
+        //                     }
+        //                     .t_body_item_bitcoin_title {
+        //                         span {
+        //                             font-family: NanumGothic ExtraBold;
+        //                             font-style: normal;
+        //                             font-weight: bold;
+        //                             line-height: normal;
+        //                             font-size: 13px;
+        //                             text-align: center;
+        //                             @include themify($themes) {
+        //                                 color: themed('textColor');
+        //                                 transition: color 0.5s;
+        //                                 -webkit-transition: color 0.5s;
+        //                                 -moz-transition: color 0.5s;
+        //                                 -ms-transition: color 0.5s;
+        //                                 -o-transition: color 0.5s;
+        //                             }
+        //                         }
+        //                     }
+        //                     .t_body_item_bitcoin_subtitle {
+        //                         margin-left: 7.7px;
+        //                         span {
+        //                             font-family: NanumGothic bold;
+        //                             font-style: normal;
+        //                             font-weight: bold;
+        //                             line-height: normal;
+        //                             font-size: 13px;
+        //                             text-align: center;
+        //                             @include themify($themes) {
+        //                                 color: themed('textColorAlpha05');
+        //                                 transition: color 0.5s;
+        //                                 -webkit-transition: color 0.5s;
+        //                                 -moz-transition: color 0.5s;
+        //                                 -ms-transition: color 0.5s;
+        //                                 -o-transition: color 0.5s;
+        //                             }
+        //                         }
+        //                     }
+        //                 }
+        //                 .t_body_item_price {
+        //                     margin: 0px 10px;
+        //                     min-width: fit-content;
+        //                     span {
+        //                         font-family: NanumGothic Bold;
+        //                         line-height: 17px;
+        //                         font-size: 12px;
+        //                         letter-spacing: 0.01em;
+        //                         @include themify($themes) {
+        //                             color: themed('textColorAlpha05');
+        //                             transition: color 0.5s;
+        //                             -webkit-transition: color 0.5s;
+        //                             -moz-transition: color 0.5s;
+        //                             -ms-transition: color 0.5s;
+        //                             -o-transition: color 0.5s;
+        //                         }
+        //                     }
+        //                 }
+        //                 .t_body_item_volume {
+        //                     min-width: fit-content;
+        //                     align-items: center;
+        //                     margin: 0px 10px;
+        //                     div:first-child {
+        //                         span {
+        //                             font-family: NanumGothic ExtraBold;
+        //                             line-height: normal;
+        //                             font-size: 12px;
+        //                             text-transform: capitalize;
+        //                             color: #0CAE63;
+        //                         }
+        //                         margin-right:8.8px;
+        //                     }
+        //                 }
+        //             }
+        //             .t_body_first_item {
+        //                 width: 5%;
+        //                 margin: 0px 5px;
+        //                 min-width: fit-content;
+        //             }
+        //         }
+        //         .t_body_row:last-child {
+        //             border-bottom: 0;
+        //         }
+        //     }
+        // }
+        .chart_in_small_widget {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: calc(100% - 150px);
+            .chart_in_small_widget_title_container {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                width: fit-content;
+                margin: 0 auto -100px 70px;
+                .chart_in_small_widget_title_content {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .chart_in_small_widget_title {
+                    span {
+                        font-family: NanumGothic Bold;
+                        font-style: normal;
+                        font-weight: bold;
+                        line-height: 24px;
+                        font-size: 64px;
+                        text-align: center;
+                        @include themify($themes) {
+                            color: themed('textColor');
+                            transition: color 0.5s;
+                            -webkit-transition: color 0.5s;
+                            -moz-transition: color 0.5s;
+                            -ms-transition: color 0.5s;
+                            -o-transition: color 0.5s;
+                        }
+                    }
+                }
+                .chart_in_small_widget_subtitle {
+                    span {
+                        font-family: NanumGothic Regular;
+                        font-style: normal;
+                        font-weight: normal;
+                        line-height: 20px;
+                        font-size: 18px;
+                        text-align: center;
+                        @include themify($themes) {
+                            color: themed('subtitletColor');
+                            transition: color 0.5s;
+                            -webkit-transition: color 0.5s;
+                            -moz-transition: color 0.5s;
+                            -ms-transition: color 0.5s;
+                            -o-transition: color 0.5s;
+                        }
+                    }
+                }
+                .chart_in_small_widget_title_overlay {
+                    position: absolute;
+                    top: -55px;
+                    right: -155px;
+                    .chart_in_small_widget_title_overlay_title {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        span {
+                            margin-right: 6.5px;
+                            font-family: NanumGothic Bold;
+                            font-style: normal;
+                            font-weight: bold;
+                            line-height: normal;
+                            font-size: 36px;
+                            color: #FF564E;
+                        }
+                    }
+                    .chart_in_small_widget_title_overlay_subtitle {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        div:first-child {
+                            span {
+                                margin-right: 6.5px;
+                                font-family: NanumGothic Regular;
+                                font-style: normal;
+                                font-weight: bold;
+                                line-height: normal;
+                                font-size: 18px;
+                                color: #0CAE63;
+                            }
+                        }
+                    }
+                }
+            }
+            .small-chart-demo {
+                height: 80%;
+                position: relative;
+            }
+        }
+        .treeMap {
+            .treeMap_container {
+                width: 94%;
+                margin: 0 auto;
+                .treeMap_pagination {
+                    margin-top: 45px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    .pagination_title {
+                        display: flex;
+                        flex-direction: column;
+                        div {
+                            span {
+                                font-family: NanumGothic Bold;
+                                font-style: normal;
+                                font-weight: normal;
+                                line-height: 14px;
+                                font-size: 10px;
+                                letter-spacing: 0.06em;
+                                @include themify($themes) {
+                                    color: themed('textColor');
+                                    transition: color 0.5s;
+                                    -webkit-transition: color 0.5s;
+                                    -moz-transition: color 0.5s;
+                                    -ms-transition: color 0.5s;
+                                    -o-transition: color 0.5s;
+                                }
+                            }
+                        }
+                    }
+                    .treeMap_pagination_content {
+                        width: 202px;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    .treeMap_pagination_item {
+                        display: flex;
+                        align-items: flex-end;
+                        .treeMap_pagination_item_icon {
+                            height: 17px;
+                            width: 17px;
+                            @include themify($themes) {
+                                background: themed('paginationBackground');
+                                transition: background 0.5s;
+                                -webkit-transition: background 0.5s;
+                                -moz-transition: background 0.5s;
+                                -ms-transition: background 0.5s;
+                                -o-transition: background 0.5s;
+                            }
+                            border: 1px solid #414BFF;
+                            box-sizing: border-box;
+                            border-radius: 2px;
+                            display: flex;
+                            img {
+                                margin: auto;
+                            }
+                            &:first-child {
+                                margin-right: 3.28px;
+                            }
+                            &:last-child {
+                                margin-left: 3.28px;
+                            }
+                        }
+                        div {
+                            span {
+                                font-family: NanumGothic Bold;
+                                font-style: normal;
+                                line-height: 11px;
+                                font-size: 9px;
+                                letter-spacing: 0.06em;
+                                @include themify($themes) {
+                                    color: themed('textColor');
+                                    transition: color 0.5s;
+                                    -webkit-transition: color 0.5s;
+                                    -moz-transition: color 0.5s;
+                                    -ms-transition: color 0.5s;
+                                    -o-transition: color 0.5s;
+                                }
+                            }
+                        }
+                    }
+                }
+                .treeMap_content {
+                    margin-top: 10px;
+                    height: 520px;
+                    .chart-demo {
+                        height: 100%;
+                    }
+                    .canvas_treemap {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .widget_mode {
+            margin-top: 20px;
+            align-items: baseline;
+            margin-left: 23px;
+            .selected {
+                display: flex;
+                width: 66px;
+                height: 21px;
+                background: #414BFF;
+                border: 1px solid #414BFF;
+                box-sizing: border-box;
+                border-radius: 2px;
+                span {
+                    margin: auto;
+                    color: white !important;
+                }
+            }
+            div {
+                margin-right: 10px;
+                span {
+                    font-family: NanumGothic ExtraBold;
+                    line-height: normal;
+                    font-size: 10px;
+                    letter-spacing: 0.06em;
+                    @include themify($themes) {
+                        color: themed('textColor');
+                        transition: color 0.5s;
+                        -webkit-transition: color 0.5s;
+                        -moz-transition: color 0.5s;
+                        -ms-transition: color 0.5s;
+                        -o-transition: color 0.5s;
+                    }
+                    mix-blend-mode: normal;
+                }
+            }
+        }
+    }
+    
+    .index_widget_title {
+        white-space: nowrap;
+        margin-top: 25px;
+        display: flex;
+        span {
+            margin: auto 0 auto 20px;
+            font-family: NanumGothic Bold;
+            font-style: normal;
+            font-weight: bold;
+            line-height: 24px;
+            font-size: 24px;
+            text-align: center;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            @include themify($themes) {
+                color: themed('textColor');
+                transition: color 0.5s;
+                -webkit-transition: color 0.5s;
+                -moz-transition: color 0.5s;
+                -ms-transition: color 0.5s;
+                -o-transition: color 0.5s;
+            }
+        }
+    }
+    
+    .small_version_index_chart {
+        display: none;
+        margin-top: 15px;
+        .small_version_index_chart_container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            .small_version_index_chart_left {
+                div:first-child {
+                    span {
+                        font-family: NanumGothic Bold;
+                        font-style: normal;
+                        font-weight: bold;
+                        line-height: 24px;
+                        font-size: 40px;
+                        @include themify($themes) {
+                            color: themed('textColor');
+                            transition: color 0.5s;
+                            -webkit-transition: color 0.5s;
+                            -moz-transition: color 0.5s;
+                            -ms-transition: color 0.5s;
+                            -o-transition: color 0.5s;
+                        }
+                    }
+                }
+                div:nth-child(2) {
+                    span {
+                        font-family: NanumGothic Regular;
+                        font-style: normal;
+                        font-weight: normal;
+                        line-height: 20px;
+                        font-size: 14px;
+                        @include themify($themes) {
+                            color: themed('subtitletColor');
+                            transition: color 0.5s;
+                            -webkit-transition: color 0.5s;
+                            -moz-transition: color 0.5s;
+                            -ms-transition: color 0.5s;
+                            -o-transition: color 0.5s;
+                        }
+                    }
+                }
+            }
+            .small_version_index_chart_right {
+                .small_version_index_chart_right_top {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 4px;
+                    span {
+                        font-family: NanumGothic Bold;
+                        font-style: normal;
+                        font-weight: bold;
+                        line-height: normal;
+                        font-size: 24px;
+                        color: #0CAE63;
+                    }
+                }
+                .small_version_index_chart_right_bottom {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    span {
+                        font-family: NanumGothic Bold;
+                        font-style: normal;
+                        font-weight: bold;
+                        line-height: normal;
+                        font-size: 12px;
+                        color: #FF564E;
+                    }
+                }
+            }
+        }
+    }
+    
+    .index_widget_status {
+        margin: 15px 0 -10px 20px;
+        width: fit-content;
+        div:first-child {
+            width: fit-content;
+            span {
+                font-family: NanumGothic Bold;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 38px;
+                @include themify($themes) {
+                    color: themed('textColor');
+                    transition: color 0.5s;
+                    -webkit-transition: color 0.5s;
+                    -moz-transition: color 0.5s;
+                    -ms-transition: color 0.5s;
+                    -o-transition: color 0.5s;
+                }
+            }
+        }
+        .index_widget_overlay {
+            position: absolute;
+            top: 10px;
+            right: -50px;
+            display: flex;
+            align-items: center;
+            width: fit-content;
+            span {
+                font-family: NanumGothic ExtraBold;
+                font-style: normal;
+                font-weight: 800;
+                line-height: normal;
+                font-size: 12px;
+                color: #FF564E;
+            }
+            img {
+                margin-left: 3px;
+            }
+        }
+    }
+    
+    .index_widget_subtitle {
+        margin-left: 20px;
+        span {
+            font-family: NanumGothic Bold;
+            font-style: normal;
+            font-weight: bold;
+            line-height: 20px;
+            font-size: 12px;
+            @include themify($themes) {
+                color: themed('subtitletColor');
+                transition: color 0.5s;
+                -webkit-transition: color 0.5s;
+                -moz-transition: color 0.5s;
+                -ms-transition: color 0.5s;
+                -o-transition: color 0.5s;
+            }
+        }
+    }
+    
+    .chart_filter {
+        z-index: 1;
+        position: absolute;
+        top: 25px;
+        display: flex;
+        width: 190px;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: 50px;
+        .chart_filter_item {
+            display: flex;
+            span {
+                font-family: NanumGothic ExtraBold;
+                line-height: normal;
+                font-size: 9px;
+                text-transform: uppercase;
+                @include themify($themes) {
+                    color: themed('filterItemColor');
+                    transition: color 0.5s;
+                    -webkit-transition: color 0.5s;
+                    -moz-transition: color 0.5s;
+                    -ms-transition: color 0.5s;
+                    -o-transition: color 0.5s;
+                }
+                mix-blend-mode: normal;
+                margin: auto;
+            }
+        }
+        .chart_filter_item.active {
+            width: 53.38px;
+            height: 21.15px;
+            @include themify($themes) {
+                border: themed('itemFilterActive');
+                transition: color 0.5s;
+                -webkit-transition: color 0.5s;
+                -moz-transition: color 0.5s;
+                -ms-transition: color 0.5s;
+                -o-transition: color 0.5s;
+            }
+            box-sizing: border-box;
+            border-radius: 40px;
+            span {
+                @include themify($themes) {
+                    color: themed('textColor');
+                    transition: color 0.5s;
+                    -webkit-transition: color 0.5s;
+                    -moz-transition: color 0.5s;
+                    -ms-transition: color 0.5s;
+                    -o-transition: color 0.5s;
+                }
+            }
+        }
+    }
+    
+     :host::ng-deep .treemap_item {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+    }
+    
+     :host::ng-deep .treemap_inner_left span {
+        font-family: NanumGothic Bold;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 43px;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        mix-blend-mode: normal;
+    }
+    
+     :host::ng-deep .treemap_inner_right {
+        display: flex;
+        flex-direction: column;
+        margin-left: 5px;
+    }
+    
+     :host::ng-deep .treemap_inner_right div:first-child {
+        display: flex;
+        align-items: center;
+        span {
+            font-family: NanumGothic Bold;
+            font-style: normal;
+            font-weight: bold;
+            line-height: normal;
+            font-size: calc(10px + 0.1vw);
+            letter-spacing: 0.06em;
+            color: #FFFFFF;
+            mix-blend-mode: normal;
+        }
+    }
+    
+     :host::ng-deep .treemap_inner_right div:last-child {
+        margin-top: -8px;
+        span {
+            font-family: NanumGothic Regular;
+            font-style: normal;
+            font-weight: normal;
+            font-size: calc(6px + 0.1vw);
+            letter-spacing: 0.06em;
+            color: #FFFFFF;
+        }
+    }
+    
+     :host::ng-deep .highcharts-plot-background {
+        width: 100%;
+    }
+    
+    .make_whole_widget_160px {
+        height: 160px !important;
+    }
+    
+    // MEDIA QUERIES    
+    @media screen and (max-width: 1205px) {
+        .chart_in_small_widget_title_container {
+            margin: 0 auto -100px 45px !important;
+        }
+        .chart_in_small_widget_title {
+            span {
+                font-size: 46px !important;
+            }
+        }
+        .chart_in_small_widget_subtitle {
+            span {
+                font-size: 15px !important;
+            }
+        }
+        .chart_in_small_widget_title_overlay_title {
+            span {
+                font-size: 29px !important;
+            }
+        }
+    }
+    
+    @media screen and (max-width: 990px) {
+         :host ::ng-deep datatable-header {
+            @include themify($themes) {
+                background: themed('predSmallListHeader') !important;
+                transition: background 0.5s;
+                -webkit-transition: background 0.5s;
+                -moz-transition: background 0.5s;
+                -ms-transition: background 0.5s;
+                -o-transition: background 0.5s;
+            }
+        }
+        .widget_chart {
+            img {
+                max-width: 50%;
+            }
+        }
+        .t_header_high_part {}
+        .market_widget_container {
+            @include themify($themes) {
+                box-shadow: themed('predSmallBoxShadow') !important;
+                transition: box-shadow 0.5s;
+                -webkit-transition: box-shadow 0.5s;
+                -moz-transition: box-shadow 0.5s;
+                -ms-transition: box-shadow 0.5s;
+                -o-transition: box-shadow 0.5s;
+                background: themed('predSmallbackground') !important;
+                transition: background 0.5s;
+                -webkit-transition: background 0.5s;
+                -moz-transition: background 0.5s;
+                -ms-transition: background 0.5s;
+                -o-transition: background 0.5s;
+            }
+        }
+        .chart_in_small_widget {
+            height: calc(100% - 36px) !important;
+            .small-chart-demo {
+                display: none;
+            }
+        }
+        .chart_in_small_widget_title_container {
+            flex-direction: row !important;
+        }
+        .chart_in_small_widget_title_overlay {
+            position: initial !important;
+            margin-left: 10px
+        }
+        .widget_mode {
+            display: none;
+        }
+        .widget_label {
+            font-size: 11px !important;
+            @include themify($themes) {
+                color: themed('predSmallWidgetLabel') !important;
+                transition: color 0.5s;
+                -webkit-transition: color 0.5s;
+                -moz-transition: color 0.5s;
+                -ms-transition: color 0.5s;
+                -o-transition: color 0.5s;
+            }
+            // color: rgba(255, 255, 255, 0.5) !important;
+        }
+        .treeMap {
+            display: none;
+        }
+        .cryptoIndex_logo {
+            display: none;
+        }
+        .chart_in_small_widget_title_container {
+            margin: 3px auto 17px auto !important;
+        }
+        .chart_in_small_widget_title {
+            span {
+                font-size: 38px !important;
+            }
+        }
+        .market_widget_title {
+            padding-top: 12px !important;
+            padding-left: 12px !important;
+        }
+        .chart_in_small_widget_subtitle {
+            span {
+                font-size: 13px !important;
+            }
+        }
+        .chart_in_small_widget_title_overlay {
+            top: -10px !important;
+            right: -130px !important;
+            .chart_in_small_widget_title_overlay_title {
+                span {
+                    font-size: 24px !important;
+                }
+            }
+            .chart_in_small_widget_title_overlay_subtitle {
+                div:first-child {
+                    span {
+                        font-size: 14px !important;
+                    }
+                }
+            }
+        }
+        .chart_filter {
+            justify-content: center;
+            margin-left: 0;
+            width: 100%;
+            position: relative !important;
+            top: 0;
+            margin-bottom: -35px;
+            margin-top: 20px;
+            .chart_filter_item {
+                margin-right: 12px
+            }
+        }
+         :host ::ng-deep datatable-body {
+            &::-webkit-scrollbar-track {
+                background-color: rgba(255, 86, 78, 0.3);
+            }
+            &::-webkit-scrollbar {
+                width: 6px !important;
+                height: 5px;
+                background-color: #F5F5F5;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: #FF564E !important;
+                border-radius: 60px !important;
+                -webkit-border-radius: 60px !important;
+                -moz-border-radius: 60px !important;
+                -ms-border-radius: 60px !important;
+                -o-border-radius: 60px !important;
+            }
+        }
+        .index_widget_status,
+        .index_widget_subtitle {
+            display: none;
+        }
+        .small_version_index_chart {
+            display: initial !important;
+        }
+    }

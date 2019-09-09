@@ -1,0 +1,18 @@
+@import 'src/app/com/annaniks/cryptoindex/styles/theme.scss';
+.full_content {
+    background: #100B36;
+    @include themify($themes) {
+        background: themed('backgroundColor');
+        transition: background 0.5s;
+        -webkit-transition: background 0.5s;
+        -moz-transition: background 0.5s;
+        -ms-transition: background 0.5s;
+        -o-transition: background 0.5s;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .middle_content {
+        margin-left: 0;
+    }
+}

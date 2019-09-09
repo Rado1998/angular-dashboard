@@ -1,0 +1,389 @@
+@import 'src/app/com/annaniks/cryptoindex/styles/theme.scss';
+:host ::ng-deep datatable-body {
+    height: 220px !important;
+    &::-webkit-scrollbar-track {
+        background-color: rgba(255, 86, 78, 0.3);
+    }
+    &::-webkit-scrollbar {
+        width: 3px;
+        height: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #FF564E !important;
+        border-radius: 60px !important;
+        -webkit-border-radius: 60px !important;
+        -moz-border-radius: 60px !important;
+        -ms-border-radius: 60px !important;
+        -o-border-radius: 60px !important;
+    }
+}
+
+:host ::ng-deep datatable-header-cell {
+    padding: 0.3rem 1.2rem !important;
+}
+
+:host ::ng-deep datatable-header {
+    @include themify($themes) {
+        background: themed('tableHeaderColor') !important;
+        transition: background 0.5s;
+        -webkit-transition: background 0.5s;
+        -moz-transition: background 0.5s;
+        -ms-transition: background 0.5s;
+        -o-transition: background 0.5s;
+    }
+}
+
+.prediction_widget_container {
+    height: 475px;
+    border-radius: 6px;
+    position: relative;
+    margin-top: 22px;
+    @include themify($themes) {
+        background-color: themed('widgetBackground');
+        transition: background-color 0.5s;
+    }
+    .widget_toolbar {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 10px;
+        top: 13px;
+        img:not(first-child) {
+            margin-left: 10px;
+        }
+    }
+    .top_list_footer {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+    }
+    .prediction_widget_content {
+        width: 85%;
+        margin: 0 auto;
+        padding-top: 24px;
+        padding-bottom: 11px;
+        .market_widget_title {
+            &:first-child {
+                margin-bottom: 10px;
+            }
+            &:last-child {
+                margin-bottom: 13px;
+            }
+            .widget_label {
+                font-family: NanumGothic Bold;
+                line-height: 24px;
+                font-size: 24px;
+                text-transform: uppercase;
+                @include themify($themes) {
+                    color: themed('textColor');
+                    transition: color 0.5s;
+                    -webkit-transition: color 0.5s;
+                    -moz-transition: color 0.5s;
+                    -ms-transition: color 0.5s;
+                    -o-transition: color 0.5s;
+                }
+            }
+        }
+        .predictions_title {
+            span:first-child {
+                font-family: NanumGothic Bold;
+                font-style: normal;
+                font-weight: bold;
+                line-height: 13px;
+                font-size: 11px;
+                text-transform: uppercase;
+                @include themify($themes) {
+                    color: themed('textColor');
+                    transition: color 0.5s;
+                    -webkit-transition: color 0.5s;
+                    -moz-transition: color 0.5s;
+                    -ms-transition: color 0.5s;
+                    -o-transition: color 0.5s;
+                }
+                margin-right: 3.6px;
+            }
+            span:nth-child(2) {
+                font-family: NanumGothic Regular;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 11px;
+                font-size: 10px;
+                @include themify($themes) {
+                    color: themed('textColor');
+                    transition: color 0.5s;
+                    -webkit-transition: color 0.5s;
+                    -moz-transition: color 0.5s;
+                    -ms-transition: color 0.5s;
+                    -o-transition: color 0.5s;
+                }
+                mix-blend-mode: normal;
+            }
+        }
+        .predictions_widget_list {
+            margin-top: 12px;
+            .predictions_list_header {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                margin-top: 13px;
+                width: 100%;
+                height: 31px;
+                @include themify($themes) {
+                    background: themed('tableHeaderColor');
+                    transition: background 0.5s;
+                    -webkit-transition: background 0.5s;
+                    -moz-transition: background 0.5s;
+                    -ms-transition: background 0.5s;
+                    -o-transition: background 0.5s;
+                }
+                .prediction_list_header_item:first-child {
+                    flex-grow: 1
+                }
+                .prediction_list_header_item:nth-child(2) {
+                    flex-grow: 2.5;
+                    text-align: left;
+                }
+                .prediction_list_header_item:nth-child(3) {
+                    flex-grow: 1
+                }
+                .prediction_list_header_item:nth-child(4) {
+                    flex-grow: 1
+                }
+                .prediction_list_header_item {
+                    text-align: center;
+                    span {
+                        font-family: NanumGothic Bold;
+                        font-style: normal;
+                        font-weight: bold;
+                        line-height: 12px;
+                        font-size: 10px;
+                        text-transform: uppercase;
+                        color: #414BFF;
+                        mix-blend-mode: normal;
+                    }
+                }
+            }
+            .predictions_list_id {
+                span {
+                    font-family: NanumGothic Bold;
+                    font-style: normal;
+                    font-weight: bold;
+                    line-height: 11px;
+                    font-size: 9px;
+                    @include themify($themes) {
+                        color: themed('textColor');
+                        transition: color 0.5s;
+                        -webkit-transition: color 0.5s;
+                        -moz-transition: color 0.5s;
+                        -ms-transition: color 0.5s;
+                        -o-transition: color 0.5s;
+                    }
+                    text-align: center;
+                }
+            }
+            .predictions_list_name {
+                .predictions_list_name_title {
+                    font-family: NanumGothic ExtraBold;
+                    font-style: normal;
+                    font-weight: 800;
+                    line-height: normal;
+                    font-size: 13px;
+                    text-align: center;
+                    @include themify($themes) {
+                        color: themed('textColor');
+                        transition: color 0.5s;
+                        -webkit-transition: color 0.5s;
+                        -moz-transition: color 0.5s;
+                        -ms-transition: color 0.5s;
+                        -o-transition: color 0.5s;
+                    }
+                    margin: 0 5px;
+                }
+                span:last-child {
+                    font-family: NanumGothic Bold;
+                    font-style: normal;
+                    font-weight: bold;
+                    line-height: normal;
+                    font-size: 13px;
+                    @include themify($themes) {
+                        color: themed('textColorAlpha05');
+                        transition: color 0.5s;
+                        -webkit-transition: color 0.5s;
+                        -moz-transition: color 0.5s;
+                        -ms-transition: color 0.5s;
+                        -o-transition: color 0.5s;
+                    }
+                }
+            }
+            .predictions_list_C2 {
+                span {
+                    font-family: NanumGothic ExtraBold;
+                    font-style: normal;
+                    font-weight: 800;
+                    line-height: normal;
+                    font-size: 12px;
+                    text-align: center;
+                    color: #0CAE63;
+                }
+            }
+            .predictions_list_content {
+                display: flex;
+                flex-direction: column;
+                max-height: 220px;
+                overflow-y: auto;
+            }
+            .predictions_filter_container {
+                display: flex;
+                justify-content: flex-end;
+                width: 100%;
+                .predictions_list_filter {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 156px;
+                    margin-top: 13px;
+                    .predictions_list_filter_item {
+                        display: flex;
+                        margin-left: 7.7px;
+                        span {
+                            font-family: NanumGothic Regular;
+                            font-style: normal;
+                            font-weight: normal;
+                            line-height: normal;
+                            font-size: 10px;
+                            color: #FFFFFF;
+                            mix-blend-mode: normal;
+                            margin: auto;
+                        }
+                    }
+                    .predictions_list_filter_item.active {
+                        width: 55.25px;
+                        height: 21px;
+                        border: 1px solid #FFFFFF;
+                        box-sizing: border-box;
+                        border-radius: 40px;
+                    }
+                }
+            }
+            .view_all {
+                margin-top: 12px;
+                button {
+                    width: 66px;
+                    height: 21.59px;
+                    background: #414BFF;
+                    border: 1px solid #414BFF;
+                    box-sizing: border-box;
+                    border-radius: 2px;
+                    font-family: NanumGothic ExtraBold;
+                    font-style: normal;
+                    font-weight: 800;
+                    line-height: normal;
+                    font-size: 10px;
+                    letter-spacing: 0.06em;
+                    color: #FFFFFF;
+                    mix-blend-mode: normal;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 990px) {
+     :host ::ng-deep datatable-body {
+        height: 100px !important;
+        &::-webkit-scrollbar {
+            width: 6px !important;
+        }
+    }
+     :host ::ng-deep datatable-header {
+        @include themify($themes) {
+            background: themed('predSmallListHeader') !important;
+            transition: background 0.5s;
+            -webkit-transition: background 0.5s;
+            -moz-transition: background 0.5s;
+            -ms-transition: background 0.5s;
+            -o-transition: background 0.5s;
+        }
+    }
+    .prediction_widget_content {
+        padding-top: 12px !important;
+    }
+    .market_widget_title {
+        .widget_label {
+            line-height: 13px !important;
+            font-size: 11px !important;
+            @include themify($themes) {
+                color: themed('predSmallWidgetLabel') !important;
+                transition: color 0.5s;
+                -webkit-transition: color 0.5s;
+                -moz-transition: color 0.5s;
+                -ms-transition: color 0.5s;
+                -o-transition: color 0.5s;
+            }
+        }
+    }
+    .prediction_widget_container {
+        @include themify($themes) {
+            box-shadow: themed('predSmallBoxShadow') !important;
+            transition: box-shadow 0.5s;
+            -webkit-transition: box-shadow 0.5s;
+            -moz-transition: box-shadow 0.5s;
+            -ms-transition: box-shadow 0.5s;
+            -o-transition: box-shadow 0.5s;
+            background: themed('predSmallbackground') !important;
+            transition: background 0.5s;
+            -webkit-transition: background 0.5s;
+            -moz-transition: background 0.5s;
+            -ms-transition: background 0.5s;
+            -o-transition: background 0.5s;
+        }
+        height: 233px !important;
+    }
+    .predictions_list_content {
+        max-height: 100px !important;
+        .predictions_list_item {
+            min-height: 35px !important;
+        }
+    }
+    .prediction_widget_content {
+        width: 90% !important;
+    }
+    .predictions_title {
+        span:nth-child(2) {
+            line-height: 13px !important;
+            font-size: 11px !important;
+            @include themify($themes) {
+                color: themed('predSmallTitle') !important;
+                transition: color 0.5s;
+                -webkit-transition: color 0.5s;
+                -moz-transition: color 0.5s;
+                -ms-transition: color 0.5s;
+                -o-transition: color 0.5s;
+            }
+        }
+    }
+    .predictions_filter_container,
+    .view_all,
+    .top_list_footer {
+        display: none !important;
+    }
+    .predictions_list_name_title {
+        font-size: 12px !important;
+    }
+    .predictions_list_header {
+        height: 20px !important;
+        @include themify($themes) {
+            background: themed('predSmallListHeader') !important;
+            transition: background 0.5s;
+            -webkit-transition: background 0.5s;
+            -moz-transition: background 0.5s;
+            -ms-transition: background 0.5s;
+            -o-transition: background 0.5s;
+        }
+    }
+    .prediction_list_header_item {
+        span {
+            font-size: 9px !important;
+        }
+    }
+}
