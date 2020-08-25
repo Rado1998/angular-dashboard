@@ -23,7 +23,7 @@
     "@swimlane/ngx-datatable": "^14.0.0",
     "core-js": "^2.5.4",
     "echarts": "^4.2.0-rc.1",
-    "highcharts": "^6.1.4",
+    "highcharts": "^7.2.2",
     "ng-click-outside": "^4.0.0",
     "ngx-echarts": "^4.0.0",
     "rxjs": "^6.0.0",
